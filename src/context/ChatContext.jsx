@@ -10,7 +10,7 @@ const AI_RESPONSES = {
   weather: "I don't have access to real-time weather data. You can check a weather service for that information.",
   location: "As an AI Language Model, I don't have the ability to detect your location.",
   help: "I'm here to help answer your questions. What would you like to know?",
-  api:"Can you explain RESTful APIs?"
+  api:"RESTful APIs are designed around the REST (Representational State Transfer) architecture, which uses HTTP requests to access and manipulate data. They follow a stateless, client-server, cacheable communications protocol."
 };
 
 export const ChatProvider = ({ children }) => {
