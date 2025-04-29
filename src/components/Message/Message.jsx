@@ -40,7 +40,7 @@ const Message = ({ message }) => {
       
       <div className={styles.messageContent}>
         <div className={styles.header}>
-          <div className={styles.sender}>{message.sender}</div>
+          <span className={styles.sender}>{message.sender}</span>
           <div className={styles.timestamp}>{formatTime(message.timestamp)}</div>
         </div>
         
