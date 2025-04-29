@@ -3,9 +3,9 @@ import styles from './ChatHeader.module.css';
 
 const ChatHeader = () => {
   return (
-    <div className={styles.chatHeader}>
+    <header className={styles.chatHeader}>
       <h1>Bot AI</h1>
-    </div>
+    </header>
   );
 };
 
