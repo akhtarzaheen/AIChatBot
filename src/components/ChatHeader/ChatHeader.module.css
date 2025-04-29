@@ -1,0 +1,21 @@
+.chatHeader {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0ff;
+    background-color: #fff;
+  }
+  
+  .chatHeader h1 {
+    font-size: 1.5rem;
+    color: #6b47b8;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    .chatHeader {
+      padding: 10px 15px;
+    }
+    
+    .chatHeader h1 {
+      font-size: 1.2rem;
+    }
+  }

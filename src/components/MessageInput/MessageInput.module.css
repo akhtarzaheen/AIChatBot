@@ -1,0 +1,64 @@
+.messageInputContainer {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #e0e0ff;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  
+  .input:focus {
+    border-color: #6b47b8;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button {
+    padding: 0 20px;
+    height: 42px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    background-color: #e9e6f3;
+    color: #6b47b8;
+  }
+  
+  .button:hover {
+    background-color: #d8d2e9;
+  }
+  
+  .button.primary {
+    background-color: #6b47b8;
+    color: white;
+  }
+  
+  .button.primary:hover {
+    background-color: #5a3da0;
+  }
+  
+  @media (max-width: 768px) {
+    .messageInputContainer {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .buttonContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .button {
+      width: 100%;
+      padding: 0;
+    }
+  }

@@ -1,0 +1,22 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .mainContent {
+    flex: 1;
+    min-height: 100vh;
+    background-color: #f8f8fd;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  @media (max-width: 768px) {
+    .layout {
+      flex-direction: column;
+    }
+    
+    .mainContent {
+      min-height: calc(100vh - 60px);
+    }
+  }

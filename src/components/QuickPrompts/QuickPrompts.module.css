@@ -1,0 +1,42 @@
+.promptsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+  }
+  
+  .promptCard {
+    background-color: white;
+    border: 1px solid #e0e0ff;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .promptCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-color: #d0d0ff;
+  }
+  
+  .promptCard h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .promptCard p {
+    font-size: 0.85rem;
+    color: #777;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .promptsContainer {
+      grid-template-columns: 1fr;
+      padding: 0 10px;
+    }
+  }
