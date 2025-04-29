@@ -9,7 +9,8 @@ const AI_RESPONSES = {
   greeting: "Hi There. How can I assist you today?",
   weather: "I don't have access to real-time weather data. You can check a weather service for that information.",
   location: "As an AI Language Model, I don't have the ability to detect your location.",
-  help: "I'm here to help answer your questions. What would you like to know?"
+  help: "I'm here to help answer your questions. What would you like to know?",
+  api:"Can you explain RESTful APIs?"
 };
 
 export const ChatProvider = ({ children }) => {
@@ -61,6 +62,8 @@ export const ChatProvider = ({ children }) => {
       response = AI_RESPONSES.location;
     } else if (lowercaseMessage.includes('help')) {
       response = AI_RESPONSES.help;
+    } else if(lowercaseMessage.includes('apis')){
+        response = AI_RESPONSES.api;
     }
     
     const aiMessage = {
