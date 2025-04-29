@@ -69,7 +69,7 @@ const History = () => {
                     </div>
                     <div>
                       <div className={styles.sender}>You</div>
-                      <div className={styles.message}>
+                      <div className={styles.noResults}>
                         {chat.messages[0]?.text || "Empty conversation"}
                       </div>
                       <div className={styles.timestamp}>
