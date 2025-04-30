@@ -140,7 +140,7 @@
 
 // export default History;
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { useChatContext } from '../../context/ChatContext';
 import { Link } from 'react-router-dom';
 import styles from './History.module.css';
@@ -149,15 +149,16 @@ const History = () => {
   const { savedChats, loadChat } = useChatContext();
   const [filterRating, setFilterRating] = useState(0);
   const [localChats, setLocalChats] = useState([]);
-  
-  useEffect(() => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useLayoutEffect(() => {
     const savedData = localStorage.getItem('botAIChats');
     if (savedData) {
       setLocalChats(JSON.parse(savedData));
     }
-  }, [savedChats]); // Update localChats when savedChats changes
-  
-  // Group chats by date
+    setIsLoading(false);
+  }, [savedChats]);
+
   const groupedChats = localChats.reduce((acc, chat) => {
     const date = new Date(chat.messages[0]?.timestamp).toLocaleDateString();
     if (!acc[date]) {
@@ -187,11 +188,14 @@ const History = () => {
     loadChat(chat);
   };
 
+  if (isLoading) {
+    return <div className={styles.historyContainer}><p>Loading history...</p></div>;
+  }
+
   return (
     <div className={styles.historyContainer}>
       <div className={styles.header}>
         <h1>Conversation History</h1>
-        
         <div className={styles.filters}>
           {[1, 2, 3, 4, 5].map((rating) => (
             <button 
@@ -209,7 +213,6 @@ const History = () => {
         Object.entries(filteredChats).map(([date, chats]) => (
           <div key={date} className={styles.dateGroup}>
             <h2 className={styles.dateHeader}>{date}</h2>
-            
             {chats.map((chat) => (
               <div key={chat.id} className={styles.chatCard}>
                 <div className={styles.chatPreview}>
@@ -288,4 +291,4 @@ const History = () => {
   );
 };
 
-export default History
+export default History;
