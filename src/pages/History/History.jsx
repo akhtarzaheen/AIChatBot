@@ -192,10 +192,6 @@ const History = () => {
     return <div className={styles.historyContainer}><p>Loading history...</p></div>;
   }
 
-  useEffect(() => {
-
-  },[filteredChats])
-
   return (
     <div className={styles.historyContainer}>
       <div className={styles.header}>
@@ -213,7 +209,7 @@ const History = () => {
         </div>
       </div>
       
-      {Object.keys(filteredChats).length > 0 ? (
+      {!isLoading && Object.keys(filteredChats).length > 0 ? (
         Object.entries(filteredChats).map(([date, chats]) => (
           <div key={date} className={styles.dateGroup}>
             <h2 className={styles.dateHeader}>{date}</h2>
