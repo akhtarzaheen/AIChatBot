@@ -60,7 +60,7 @@ const History = () => {
           <div key={date} className={styles.dateGroup}>
             <h2 className={styles.dateHeader}>{date}</h2>
             
-            {filteredChats[date].map((chat) => (
+            {filteredChats && filteredChats[date] && filteredChats[date].map((chat) => (
               <div key={chat.id} className={styles.chatCard}>
                 <div className={styles.chatPreview}>
                   <div className={styles.userMessage}>
