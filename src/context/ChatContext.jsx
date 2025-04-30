@@ -191,7 +191,7 @@ export const ChatProvider = ({ children }) => {
     );
     if (partialMatch) return partialMatch.response;
     
-    return "Sorry, I did not understand your query!";
+    return "Sorry, Did not understand your query!";
   };
   
   const aiResponse = (userMessage) => {
