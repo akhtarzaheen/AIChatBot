@@ -281,7 +281,7 @@ const History = () => {
         ))
       ) : (
         <div className={styles.noResults}>
-            <div>Hi, how are you?</div>
+            <div style={{display:"none"}}>Hi, how are you?</div>
           <p>No saved conversations found.</p>
           {filterRating > 0 && (
             <p>Try removing the rating filter to see all conversations.</p>
