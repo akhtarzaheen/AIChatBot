@@ -140,7 +140,7 @@
 
 // export default History;
 
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect, useEffect } from 'react';
 import { useChatContext } from '../../context/ChatContext';
 import { Link } from 'react-router-dom';
 import styles from './History.module.css';
@@ -191,6 +191,10 @@ const History = () => {
   if (isLoading) {
     return <div className={styles.historyContainer}><p>Loading history...</p></div>;
   }
+
+  useEffect(() => {
+
+  },[filteredChats])
 
   return (
     <div className={styles.historyContainer}>
